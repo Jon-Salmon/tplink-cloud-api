@@ -6,24 +6,24 @@ from .device import TPLinkDevice
 class CurrentPower:
 
     def __init__(self, realtime_data):
-        if 'voltage_mv' in realtime:
-            self.voltage_mv = realtime['voltage_mv']
-        elif 'voltage' in realtime:
-            self.voltage_mv = realtime['voltage'] * 1000
+        if 'voltage_mv' in realtime_data:
+            self.voltage_mv = realtime_data['voltage_mv']
+        elif 'voltage' in realtime_data:
+            self.voltage_mv = realtime_data['voltage'] * 1000
         else:
             self.voltage_mv = None
 
-        if 'current_ma' in realtime:
-            self.current_ma = realtime['current_ma']
-        elif 'current' in realtime:
-            self.current_ma = realtime['current'] * 1000
+        if 'current_ma' in realtime_data:
+            self.current_ma = realtime_data['current_ma']
+        elif 'current' in realtime_data:
+            self.current_ma = realtime_data['current'] * 1000
         else:
             self.current_ma = None
 
-        if 'power_mw' in realtime:
-            self.power_mw = realtime['power_mw']
-        elif 'power' in realtime:
-            self.power_mw = realtime['power'] * 1000
+        if 'power_mw' in realtime_data:
+            self.power_mw = realtime_data['power_mw']
+        elif 'power' in realtime_data:
+            self.power_mw = realtime_data['power'] * 1000
         else:
             self.power_mw = None
         
